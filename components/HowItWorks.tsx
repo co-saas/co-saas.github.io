@@ -1,12 +1,10 @@
 // components/HowItWorks.tsx
 "use client";
-import { motion } from "framer-motion";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import SectionTitle from "@/components/reusable/SectionTitle";
 import Timeline from "@/components/Timeline";
 import ProfileCard from "@/components/reusable/ProfileCard"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CheckCircle, UserPlus, FileText, CreditCard, Rocket, SearchCheck } from "lucide-react";
+import { UserPlus, FileText, Rocket, SearchCheck } from "lucide-react";
 
 const stepsOwner  = [
   { icon: UserPlus, text: "Crea un profilo" },
@@ -46,7 +44,7 @@ export default function HowItWorks() {
                 Sei un founder con un’idea ambiziosa? un progetto open-source? <br /> <br />                
                 Pubblica il tuo progetto e trova collaboratori motivati.
               </ProfileCard>
-              <Timeline steps={stepsOwner} className="flex flex-col items-center"/>
+              <Timeline steps={stepsOwner}/>
           </TabsContent>
       </Tabs>
       </div>

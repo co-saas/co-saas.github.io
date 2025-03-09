@@ -1,10 +1,8 @@
-// components/Pricing.tsx
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import SectionTitle from "@/components/reusable/SectionTitle";
 import ProfileCard from "@/components/reusable/ProfileCard";
 import { Check } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 const pricingPlans = [
   {
@@ -36,20 +34,6 @@ const pricingPlans = [
   },
 ];
 
-export function PricingCard({ title, price, features }: PricingCardProps) {
-  return (
-        <ProfileCard title={title} className="text-center h-full">
-            <p className="text-2xl text-gray-800 font-bold text-center mb-6">{price}</p>
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-gray-800">
-                  <Check className="text-gray-500" />
-                  <p>{feature}</p>
-                </div>
-              ))}
-            <Button disabled className="mt-6 w-full">Scopri di più</Button>
-        </ProfileCard>
-  );
-}
 
 export default function Pricing() {
   return (
@@ -58,12 +42,17 @@ export default function Pricing() {
 
       <div className="mt-8 grid md:grid-cols-3 gap-6">
         {pricingPlans.map((plan, index) => (
-          <PricingCard 
-            key={index}
-            title={plan.title}
-            price={plan.price}
-            features={plan.features}
-          />
+        <ProfileCard title={plan.title} key={index}>
+            <p className="text-2xl text-gray-800 font-bold text-center mb-6">{plan.price}</p>
+            <Separator className="my-2"/>
+              {plan.features.map((feature, index) => (
+                <div key={index} className="flex items-center gap-2 text-gray-800">
+                  <Check className="text-gray-500" />
+                  <p>{feature}</p>
+                </div>
+              ))}
+            <Button disabled className="mt-6 w-full">Scopri di più</Button>
+        </ProfileCard>
         ))}
       </div>
     </section>

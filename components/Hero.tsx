@@ -1,9 +1,7 @@
 // components/Hero.tsx
 "use client";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import EmailForm from "./EmailForm";
-import { TextSecondary } from "@/components/reusable/Text";
 
 export default function Hero() {
   return (

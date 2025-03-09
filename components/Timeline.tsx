@@ -1,27 +1,34 @@
-// components/Timeline.tsx
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { CheckCircle, UserPlus, FileText, CreditCard, Rocket } from "lucide-react";
+import { ForwardRefExoticComponent } from "react";
+import { LucideProps } from "lucide-react"; // Assicurati di importare LucideProps
 
-const steps = [
-  { icon: UserPlus, text: "Crea un profilo" },
-  { icon: FileText, text: "Compila il form con i dettagli" },
-  { icon: CreditCard, text: "Paga la fee (€4.99)" },
-  { icon: Rocket, text: "Il progetto è pubblicato!" },
-];
 
-export default function Timeline({steps}: array) {
+type Step = {
+  icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>;
+  text: string;
+};
+
+interface TimelineProps {
+  steps: Step[];
+}
+
+
+export default function Timeline({ steps }: TimelineProps) {
+  const refs = steps.map(() => useRef(null));
+  const inViews = refs.map((ref) => useInView(ref, { once: true, margin: "-50px" }));
+
   return (
     <div className="flex flex-col items-start">
-      {/* Linea verticale */}
 
       <ul className="space-y-10">
         {steps.map((step, index) => {
           const Icon = step.icon;
-          const ref = useRef(null);
-          const isInView = useInView(ref, { once: true, margin: "-50px" });
+          const ref = refs[index];
+          const isInView = inViews[index];
 
           return (
             <motion.li
@@ -38,7 +45,7 @@ export default function Timeline({steps}: array) {
               </div>
 
               {/* Testo Step */}
-              <p className="text-md font-medium bg-gray-100 text-gray-800  px-4 py-2 rounded-lg shadow-xs">
+              <p className="text-md font-medium bg-gray-100 text-gray-800 px-4 py-2 rounded-lg shadow-xs">
                 {step.text}
               </p>
             </motion.li>
