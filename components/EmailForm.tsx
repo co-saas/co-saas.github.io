@@ -15,7 +15,7 @@ export default function EmailForm() {
     <form
       action="https://formspree.io/f/YOUR_FORM_ID"
       method="POST"
-      className="flex gap-2 w-full mx-auto"
+      className="flex flex-col md:flex-row gap-2 w-full mx-auto"
     >
       <Input
         type="email"

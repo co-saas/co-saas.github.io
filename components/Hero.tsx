@@ -17,7 +17,7 @@ export default function Hero() {
         Trova collaboratori o unisciti a progetti innovativi 🚀
       </motion.h1>
       <p className="text-gray-800 text-lg mt-4">
-        Sei un founder con un’idea ambiziosa? O un talento in cerca di un progetto stimolante? <br /> <span className="font-semibold">CoSaaS ti connette con le persone giuste</span> per trasformare le idee in realtà. <br />
+        CoSaaS ti <span className="font-semibold">connette con le persone giuste</span> per trasformare le idee in realtà. <br /> Scopri tanti progetti, tutti italiani 🇮🇹 , su cui collaborare.
       </p>
       <div className="mt-8 flex justify-center">
         <EmailForm />
