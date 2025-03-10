@@ -7,7 +7,10 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 const handleNull = () => {
-    document.getElementById("footer").scrollIntoView();  
+    const footer = document.getElementById("footer");
+    if (footer) {        
+        footer.scrollIntoView();
+    }
 }
 
 export default function Home() {
