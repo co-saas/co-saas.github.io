@@ -1,10 +1,11 @@
 // components/Footer.tsx
 import EmailForm from "./EmailForm";
+import SectionTitle from "@/components/reusable/SectionTitle";
 
 export default function Footer() {
   return (
     <footer className="text-center py-10">
-      <h2 className="text-xl font-bold text-white">Resta aggiornato su CoSaaS</h2>
+      <SectionTitle primaryText="Inserisci la tua email" secondaryText="e ti contatteremo al più presto"/>
       <div className="mt-4 flex justify-center">
         <EmailForm />
       </div>
