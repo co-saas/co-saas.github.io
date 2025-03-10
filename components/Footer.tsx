@@ -4,7 +4,7 @@ import SectionTitle from "@/components/reusable/SectionTitle";
 
 export default function Footer() {
   return (
-    <footer className="text-center py-10">
+    <footer id="footer" className="text-center py-10">
       <SectionTitle primaryText="Inserisci la tua email" secondaryText="e ti contatteremo al più presto"/>
       <div className="mt-4 flex justify-center">
         <EmailForm />

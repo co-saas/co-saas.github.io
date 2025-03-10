@@ -55,7 +55,7 @@ export default function Navbar({highlightForm}: NavbarProps) {
           <Link href="#pricing" className="block py-2 active:text-primary/80 active:underline" onClick={() => setIsOpen(!isOpen)}>
             Prezzi
           </Link>
-          <Button className="mt-4 w-full" onClick={handleStartAndCloseMenuMobile}>Scopri</Button>
+          <Button variant="outline" className="mt-4 w-full" onClick={handleStartAndCloseMenuMobile}>Scopri</Button>
         </div>
       </motion.div>
       )}
