@@ -13,7 +13,7 @@ export default function EmailForm() {
     🔗 Iscriviti ora e scopri nuove opportunità!
     </p>
     <form
-      action="https://formspree.io/f/YOUR_FORM_ID"
+      action="https://formspree.io/f/xjkyvgae"
       method="POST"
       className="flex flex-col md:flex-row gap-2 w-full mx-auto"
     >
