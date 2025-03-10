@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription, AlertTitle} from "@/components/ui/alert";
 import SectionTitle from "@/components/reusable/SectionTitle";
 import ProfileCard from "@/components/reusable/ProfileCard";
 import { Check } from "lucide-react";
@@ -48,8 +49,13 @@ export default function Pricing() {
         <ProfileCard title={plan.title} key={index}>
             {(plan.discountedPrice) ? (
                 <>
-                <p className="text-md text-gray-500 font-semibold text-center line-through"> {plan.price} </p>
-                <p className="text-2xl text-gray-800 font-bold text-center mb-6 text-lime-700">{plan.discountedPrice}</p>
+                <p className="text-md opacity-25 -mt-4 font-semibold text-center line-through"> {plan.price} </p>
+                <Alert variant="success">
+                  <AlertTitle className="text-xs">Promo lancio!</AlertTitle>
+                  <AlertDescription className="text-2xl text-lime-800 font-bold">
+                    {plan.discountedPrice}
+                  </AlertDescription>
+                </Alert>
                 </>
             ) : (
                 <p className="text-2xl text-gray-800 font-bold text-center mb-6">{plan.price}</p>
